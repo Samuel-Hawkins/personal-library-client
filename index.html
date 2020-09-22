@@ -14,7 +14,7 @@
     <body>
       <h1>Personal Library</h1>
       <p id='message'></p>
-
+      <div class='signInUp'>
       <form id="sign-up-form">
         <fieldset>
           <legend>Sign up!</legend>
@@ -45,7 +45,10 @@
           <input type="submit" value="Sign In">
         </fieldset>
       </form>
-
+      <button id='signUpButton'>Sign Up</button>
+      <button id='signInButton'>Sign In</button>
+    </div>
+    <div class='passOut'>
       <form id="pass-change-form">
         <fieldset>
           <legend>Change Password!</legend>
@@ -59,10 +62,13 @@
           <input type="submit" value="Change Password">
         </fieldset>
       </form>
+      <button id='pass-change-button'>Change Password</button>
+      <button id='signOut'>Sign out</button>
+    </div>
       <section>
         <form id="book-create">
           <fieldset>
-            <legend>Create New Book!</legend>
+            <legend>Add a New Book!</legend>
 
             <label for="Title">Title</label>
             <input id="title" name="title" type="text" placeholder="Enter the Title of the book">
@@ -72,10 +78,9 @@
 
             <input id="owner" name="owner" type="text" placeholder="DONT ENTER ANYTHING HERE">
 
-            <input type="submit" value="Create New Book">
+            <input type="submit" value="Add a New Book">
           </fieldset>
         </form>
-        <button id='signOut'>Sign out</button>
         <button id='getBooks'>Get All Books</button>
         <div id='allMyBooks'>
         </div>

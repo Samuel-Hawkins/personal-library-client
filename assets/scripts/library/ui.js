@@ -2,6 +2,9 @@
 
 const showBooksSuccess = function (response) {
   $('#allMyBooks').html('')
+  if (response.books.length === 0) {
+    $('#allMyBooks').append(`<p>You don't seem to have any books, why dont you add some</p>`)
+  }
   for (let i = 0; i < response.books.length; i++) {
     $('#allMyBooks').append(
       `<h4>Book ${i + 1}</h4>
@@ -38,12 +41,28 @@ const updateShow = function () {
   const updateForm = $(event.target).attr('data-value-index')
   $('#' + updateForm).show()
   $('.' + updateForm).hide()
-  $('.' + updateForm).hide()
+}
+const showSignInForm = function () {
+  $('#signInButton').hide()
+  // $('#signUpButton').hide()
+  $('#sign-in-form').show()
+}
+const showSignUpForm = function () {
+  $('#sign-up-form').show()
+  $('#signUpButton').hide()
+  // $('#signInButton').hide()
+}
+
+const showPassChangeForm = function () {
+  $('#pass-change-form').show()
 }
 
 module.exports = {
   showBooksSuccess: showBooksSuccess,
   createNewBookSuccess: createNewBookSuccess,
   deleteBookSuccess: deleteBookSuccess,
-  updateShow: updateShow
+  updateShow: updateShow,
+  showSignInForm: showSignInForm,
+  showSignUpForm: showSignUpForm,
+  showPassChangeForm: showPassChangeForm
 }
